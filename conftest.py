@@ -26,7 +26,7 @@ def browser(request):
         driver = webdriver.Firefox(options=options)
     else:
         raise ValueError(f"Browser '{browser}' is not supported.")
-    driver.maximize_window()
+    #driver.maximize_window()
     yield driver
     driver.quit()
 
