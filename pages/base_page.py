@@ -47,6 +47,8 @@ class BasePage:
         logger.info(f"Accepting the alert")
         self.driver.switch_to.alert.accept()
 
-    def scroll_down(self, locator):
-        logger.info(f"Scrolling down locator: {locator}")
-        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    def java_script_element_click(self, locator):
+        logger.info(f"Clicking on element through Java Script executor: {locator}")
+        self.driver.execute_script(f"document.getElementById({locator}).click();")
+
+

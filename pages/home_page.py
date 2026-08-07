@@ -32,9 +32,11 @@ class HomePage(BasePage):
 
     def event_display(self, event):
         """ Verify Event is displayed in Home Page """
+        #self.scroll_to_locator(HomePageLocators.EVENT_NAME)
         event_name = self.get_text(HomePageLocators.EVENT_NAME)
         assert event_name == event, "Event name is not correct"
         logger.info(f"Event name: {event_name}")
+        #self.scroll_to_locator(HomePageLocators.BOOK_NOW)
         self.click(HomePageLocators.BOOK_NOW)
 
     def default_ticket_price(self):
@@ -75,8 +77,7 @@ class HomePage(BasePage):
     def click_on_confirm_booking(self):
         """ Click on Confirm Booking """
         logger.info(f"Click on Confirm Booking")
-        self.scroll_down(HomePageLocators.CONFIRM_BOOKING)
-        self.click(HomePageLocators.CONFIRM_BOOKING)
+        self.java_script_element_click(HomePageLocators.CONFIRM_BOOKING)
 
 
 
