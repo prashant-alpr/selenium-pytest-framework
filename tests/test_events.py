@@ -2,7 +2,6 @@ import pytest
 from pages.login_page import LoginPage
 from pages.home_page import HomePage
 from pages.event_booked_page import EventBookedPage
-#from data.config import CONFIG
 from data.event_details import EventDetails
 
 class TestEvents:
@@ -12,7 +11,6 @@ class TestEvents:
     def test_login(self, browser, user_credentials):
         login_page = LoginPage(browser)
         login_page.load_url(EventDetails.URL)
-        #login_page.login(CONFIG.APP_EMAIL, CONFIG.APP_PASSWORD)
         login_page.login(user_credentials.get("email"), user_credentials.get("password"))
 
     @pytest.mark.smoke
