@@ -75,8 +75,7 @@ class HomePage(BasePage):
     def click_on_confirm_booking(self):
         """ Click on Confirm Booking """
         logger.info(f"Click on Confirm Booking")
-        self.scroll_down(HomePageLocators.CONFIRM_BOOKING)
-        self.click(HomePageLocators.CONFIRM_BOOKING)
+        self.java_script_element_click(HomePageLocators.CONFIRM_BOOKING)
 
 
 
